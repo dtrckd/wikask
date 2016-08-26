@@ -11,6 +11,10 @@ def argParse(usage="Usage ?"):
         elif arg in ('-m',):
             _arg = sys.argv.pop(i+1)
             argdict['model'] = _arg
+        elif arg in ('--fr', '-fr'):
+            argdict['lang'] = 'fr'
+        elif arg in ('--en', '-en'):
+            argdict['lang'] = 'en'
         else:
             if i == 0:
                 argdict.setdefault('titles', '') # see defaultdict...
